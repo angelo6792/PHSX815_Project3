@@ -8,6 +8,10 @@ from fractions import Fraction
 sys.path.append(".")
 from Random2 import Random
 
+
+
+Alpha = 0.35
+
 # main function for our dice roll Python code
 if __name__ == "__main__":
     if '-h' in sys.argv or '--help' in sys.argv:
@@ -25,12 +29,12 @@ if __name__ == "__main__":
     random = Random(seed)
 
     # default dice roll  probability with Rayleigh distribution
-    prob1 = Fraction(1,6)
-    prob2 = Fraction(1,6)
-    prob3 = Fraction(1,6)
-    prob4 = random.Rayleigh()
-    prob5 = random.Rayleigh()
-    prob6 = random.Rayleigh()
+    prob1 = Alpha*random.Rayleigh()
+    prob2 = Alpha*random.Rayleigh()
+    prob3 = Alpha*random.Rayleigh()
+    prob4 = Alpha*random.Rayleigh()
+    prob5 = Alpha*random.Rayleigh()
+    prob6 = Alpha*random.Rayleigh()
     total = prob1+prob2+prob3+prob4+prob5+prob6
     prob1 = prob1 / total
     prob2 = prob2 / total
